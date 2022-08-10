@@ -1,0 +1,22 @@
+<div class="customer">
+    <h2>שלום, {{customerData.firstName}} {{customerData.lastName}}</h2><br />
+    <p><span class="title">כתובת:</span> <button mat-button (click)="editAddress()">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <br />
+        <ng-container>רחוב {{customerData.address.street}} {{customerData.address.number}} {{customerData.address.city}}
+            <br /> מיקוד {{customerData.address.zipCode}}
+        </ng-container>
+    </p>
+
+    <p><span class="title">המנויים שלי :</span>
+    <mat-grid-list cols="3" rowHeight="30px" class="contract-grid-list">
+        <mat-grid-tile class="contract-grid" *ngFor="let c of customerData.contractList">
+            <button mat-button (click)="ContractChoose=c">
+                {{c.contractName}}
+            </button>
+        </mat-grid-tile>
+    </mat-grid-list></p>
+
+    <app-packages-by-contract *ngIf="ContractChoose" [packagesByContract]="ContractChoose"></app-packages-by-contract>
+</div>

@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-icon aria-hidden="false">account_circle</mat-icon>
+  <form>
+    <h2>ברוכים הבאים</h2>
+    <mat-error *ngIf="loginInvalid">
+      משתמש לא קיים
+    </mat-error>
+    <mat-form-field appearance="fill">
+      <mat-label>הכנס תעודת זהות</mat-label>
+      <input matInput required [formControl]="myControl">
+      <mat-error *ngIf="myControl?.invalid"> מספר זהות אינו תקין</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onsubmit()">אישור</button>
+  </form>
+</mat-card>

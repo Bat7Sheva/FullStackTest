@@ -1,0 +1,26 @@
+
+<form [formGroup]="editAddressForm" (ngSubmit)="saveUpdate()">
+    <h2>עריכת כתובת לקוח </h2>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>עיר</mat-label>
+            <input matInput required formControlName="city">
+            <mat-error>שדה חובה</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>רחוב</mat-label>
+            <input matInput required formControlName="street">
+            <mat-error>שדה חובה</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>מס בנין</mat-label>
+            <input matInput required formControlName="number">
+            <mat-error>שדה חובה</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>מיקוד</mat-label>
+            <input matInput required formControlName="zipCode">
+            <mat-error>שדה חובה</mat-error>
+        </mat-form-field>
+<button mat-button type="submit">אישור<mat-icon>save</mat-icon></button>
+</form>

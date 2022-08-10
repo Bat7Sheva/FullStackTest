@@ -1,0 +1,8 @@
+<p><span class="title">החבילות שלי </span>({{packagesByContract.contractName}}):</p>
+<span *ngFor="let x of packagesByContract.packagesList;index as i;">
+    {{i+1}}.
+    <ng-container>{{x.packageName}}</ng-container><br/>
+    <ng-container><span class="space">{{x.packageType==0?'הודעות':x.packageType==1?'דקות
+            שיחה':x.packageType==2?'GB':'דקות שיחה לחו\"ל'}} שנותרו: {{x.packageBalance}}
+        </span> </ng-container><br/><br/>
+</span>

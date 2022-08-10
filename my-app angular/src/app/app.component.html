@@ -1,0 +1,5 @@
+<button mat-button color="primary" *ngIf='customerData!=undefined'  (click)="openLogin(); customerData=undefined">
+  החלף לקוח
+</button>
+
+<app-customer *ngIf='customerData!=undefined' [customerData]="customerData"> </app-customer>
